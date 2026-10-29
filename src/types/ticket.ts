@@ -8,6 +8,8 @@ export type TicketStatus =
   | "solved"
   | "archived";
 
+export type MessageAuthor = "client" | "agent";
+
 export interface Client {
   name: string;
   email: string;
@@ -32,4 +34,13 @@ export interface Ticket {
   assignedAgentId: Agent["id"] | null;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface Message {
+  id: string;
+  ticketId: Ticket["id"];
+  authorType: MessageAuthor;
+  agentId: Agent["id"] | null;
+  content: string;
+  createdAt: string;
 }
