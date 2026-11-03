@@ -31,7 +31,9 @@ export function TicketsPage() {
   }
   return (
     <main>
-      <h1>Tickets</h1>
+      <h1 className="mx-auto max-w-4xl p-6 text-3xl font-bold text-blue-600">
+        Tickets
+      </h1>
       <ul>
         {tickets.map((ticket) => (
           <li key={ticket.id}>
