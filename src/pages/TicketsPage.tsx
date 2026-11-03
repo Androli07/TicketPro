@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTickets } from "../api/ticketsApi";
 import type { Ticket } from "../types/ticket";
+import { TicketCard } from "../components/TicketCard";
 
 export function TicketsPage() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
@@ -30,17 +31,13 @@ export function TicketsPage() {
     return <p>{error}</p>;
   }
   return (
-    <main>
-      <h1 className="mx-auto max-w-4xl p-6 text-3xl font-bold text-blue-600">
-        Tickets
-      </h1>
-      <ul>
+    <main className="mx-auto max-w-4xl p-6">
+      <h1 className="mb-4 text-3xl font-bold text-blue-600">Tickets</h1>
+      <div className="flex flex-col gap-3">
         {tickets.map((ticket) => (
-          <li key={ticket.id}>
-            {ticket.priority} - {ticket.status} - {ticket.subject}
-          </li>
+          <TicketCard key={ticket.id} ticket={ticket} />
         ))}
-      </ul>
+      </div>
     </main>
   );
 }
