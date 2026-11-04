@@ -1,5 +1,6 @@
 import type { Ticket } from "../types/ticket";
 import { StatusBadge } from "./StatusBadge";
+import { PriorityBadge } from "./PriorityBadge";
 
 interface TicketCardProps {
   ticket: Ticket;
@@ -13,7 +14,7 @@ export function TicketCard({ ticket }: TicketCardProps) {
         <StatusBadge status={ticket.status} />
       </div>
       <p className="text-sm text-gray-500 mt-1">{ticket.client.name}</p>
-      <p className="text-sm text-gray-500 mt-1">{ticket.priority}</p>
+      <PriorityBadge priority={ticket.priority} />
     </article>
   );
 }

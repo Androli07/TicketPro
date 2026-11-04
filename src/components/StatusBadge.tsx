@@ -8,6 +8,14 @@ const statusStyles: Record<TicketStatus, string> = {
   archived: "bg-gray-100 text-gray-600",
 };
 
+const statusLabels: Record<TicketStatus, string> = {
+  unattended: "Unattended",
+  in_progress: "In progress",
+  pending: "Pending",
+  solved: "Solved",
+  archived: "Archived",
+};
+
 interface StatusBadgeProps {
   status: TicketStatus;
 }
@@ -17,7 +25,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
     <span
       className={`rounded-full px-2 py-0.5 text-xs font-medium ${statusStyles[status]}`}
     >
-      {status}
+      {statusLabels[status]}
     </span>
   );
 }
