@@ -10,7 +10,7 @@ interface TicketCardProps {
 
 export function TicketCard({ ticket, agent }: TicketCardProps) {
   return (
-    <Link to={`/tickets/:${ticket.id}`} className="block">
+    <Link to={`/tickets/${ticket.id}`} className="block">
       <article className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md hover:border-blue-300 transition">
         <div className="flex justify-between items-center gap-2 ">
           <h2 className="font-semibold">{ticket.subject}</h2>
